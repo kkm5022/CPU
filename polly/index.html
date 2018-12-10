@@ -1,0 +1,63 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+
+    <div id="content">
+      목소리 선택:<select id="voiceSelected">
+        <option value="Seoyeon">Seoyeon [Korean]</option>
+        <option value="Joanna">Joanna [English]</option>
+        <option value="Maja">Maja [Polish]</option>
+        <option value="Enrique">Enrique [Spanish]</option>
+        <option value="Marlene">Marlene [German]</option>
+        <option value="Mathieu">Mathieu [French]</option>
+        <option value="Cristiano">Cristiano [Portuquese]</option>
+        <option value="Liv">Liv [Norwegian]</option>
+        <option value="Mizuki">Mizuki [Japanese]</option>
+        <option value="Carla">Carla [Italian]</option>
+        <option value="Carmen">Carmen [Romanian]</option>
+        <option value="Tatyana">Tatyana [Russian]</option>
+        <option value="Astrid">Astrid [Swedish]</option>
+        <option value="Filiz">Filiz [Turkish]</option>
+        <option value="Gwyneth">Gwyneth [Welsh]</option>
+        <option value="Karl">Karl [Icelandic]</option>
+      </select>
+      한자 변환:<input type="checkbox" id="hanja" name="hanjaFlag" value="hanjaFlag">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="submit" value="음성 변환 시작" id="sayButton" class="buttons">
+    </br>
+      <span id="postIDreturned"></span>
+    </br></br>
+    텍스트 내용:</br>
+    <textarea id ="postText" rows="7"></textarea>
+    <span id="charCounter">Characters: 0</span>
+
+    </br></br></br>
+      당신이 검색하기를 원하는 게시물 등록 번호를 넣어주세요: <input type="text" id="postId" value="*"> <input type="submit" class="buttons" value="검색" id="searchButton">
+      <br/>
+    </div>
+
+      <table id="posts">
+        <colgroup>
+          <col style="width:10%">
+          <col>
+          <col style="width:10%">
+          <col style="width:100px">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>등록 번호</th>
+            <th>변환 텍스트</th>
+            <th>상태</th>
+            <th>플레이어</th>
+          </tr>
+        </tbody>
+      </table>
+
+    <script src="scripts.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+  </body>
+</html>
