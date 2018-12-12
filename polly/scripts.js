@@ -1,4 +1,4 @@
-﻿var API_ENDPOINT = "https://6hj1ociwy1.execute-api.ap-northeast-2.amazonaws.com/dev"
+﻿var API_ENDPOINT = "https://dr9rq5t75k.execute-api.ap-northeast-2.amazonaws.com/dev"
 if (API_ENDPOINT === "")
 {
         alert("API Gateway에 배포한 URL을 등록하고 실행하세요.");
@@ -8,8 +8,7 @@ document.getElementById("sayButton").onclick = function(){
         document.getElementById("postIDreturned").textContent="게시물 등록: 요청중";
         var inputData = {
                 "voice": $('#voiceSelected option:selected').val(),
-                "text" : $('#postText').val(),
-                "hanja": $('#hanja').is(":checked")
+                "text" : $('#postText').val()
         };
 
         $.ajax({
@@ -37,10 +36,10 @@ document.getElementById("searchButton").onclick = function(){
                 success: function (response) {
                         $('#posts tr').slice(1).remove();
                         jQuery.each(response, function(i,data) {
-                                var player = "<audio controls><source src='" + data['mp3Url'] + "' type='audio/mpeg'></audio>"
-                                if (typeof data['mp3Url'] === "undefined") {
-                                        var player = ""
-                                }
+                            var player = "<audio controls><source src='" + data['mp3Url'] + "' type='audio/mpeg'></audio>"
+                            if (typeof data['mp3Url'] === "undefined") {
+                                var player = ""
+                            }
                                 $("#posts").append("<tr> \
                                         <td>" + data['id'] + "</td> \
                                         <td>" + data['replaceText'] + "</td> \
